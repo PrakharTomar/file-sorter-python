@@ -4,12 +4,9 @@ import shutil
 # Folder path where files are located
 path = r"Enter your file path here"
 
-# List all files in the directory
-os.listdir(path)
-
 # Define folder names for different file types
-folder_names = ["Documents", "Images", "Audios", "Videos", "Archives",
-                "Programming", "System", "Presentations", "Spreadsheets"]
+folder_names = ["Documents", "Images", "Audios", "Videos", "Archives", "Programming",
+                "System", "Presentations", "Spreadsheets", "Miscellaneous"]
 
 # Create folders if they do not exist
 for folder_name in folder_names:
@@ -81,6 +78,8 @@ for file in file_name:
         shutil.move(path + "\\" + file, path + "\\Spreadsheets\\" + file)
     elif file.endswith(".pptx"):
         shutil.move(path + "\\" + file, path + "\\Presentations\\" + file)
+    else:
+        shutil.move(path + "\\" + file, path + "\\Miscellaneous\\" + file)
 
 
 
